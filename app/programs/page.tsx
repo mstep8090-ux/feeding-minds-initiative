@@ -2,68 +2,10 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, BookOpen, Zap, Heart, Church, MapPin, Trophy, Users } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import ApplicationForm from '@/components/application-form'
 
 export default function Programs() {
-  const arms = [
-    {
-      title: 'School Outreach Arm',
-      description:
-        'This arm focuses on secondary schools and tertiary institutions, delivering skill-acquisition training, mentorship, leadership talks, and empowerment programs that prepare students for life beyond the classroom.',
-      icon: BookOpen,
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      title: 'Physical Academy Arms',
-      description:
-        'Where individuals physically meet to learn varieties of skills, both in our head office and branch office for skills acquisition.',
-      icon: Zap,
-      color: 'from-purple-500 to-purple-600',
-    },
-    {
-      title: 'Orphanage Outreach Arm',
-      description:
-        'Through this arm, we serve orphanage homes, providing practical skill training, educational support, mentorship, and emotional encouragement to help children build confidence and hope for the future.',
-      icon: Heart,
-      color: 'from-red-500 to-red-600',
-    },
-    {
-      title: 'Church Outreach Arm',
-      description:
-        'This arm partners with churches and faith-based organizations to deliver skills training, youth empowerment sessions, and value-driven development programs that promote purpose, discipline, and service.',
-      icon: Church,
-      color: 'from-amber-500 to-amber-600',
-    },
-    {
-      title: 'Community Outreach Arm',
-      description:
-        'Our community outreach arm engages local communities, offering vocational training, empowerment workshops, and awareness programs aimed at improving self-reliance and social development.',
-      icon: MapPin,
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      title: 'Charity Arm',
-      description:
-        'The charity arm focuses on acts of compassion and support, including donations, educational materials, basic needs assistance, and relief support for vulnerable individuals and groups.',
-      icon: Heart,
-      color: 'from-orange-500 to-orange-600',
-    },
-    {
-      title: 'Quiz Competition Arm',
-      description:
-        'This arm creates open learning and empowerment spaces with free or public sessions where individuals can learn skills, receive guidance, connect, and grow regardless of background or status.',
-      icon: Trophy,
-      color: 'from-yellow-500 to-yellow-600',
-    },
-    {
-      title: 'Special Day/Birthday Celebration Shout out',
-      description:
-        'About any individual who wants to use their special day for teaching people through us. We help you visit orphanages and train them with your resources while you attain and maintain your lead sponsors position.',
-      icon: Users,
-      color: 'from-pink-500 to-pink-600',
-    },
-  ]
-
   const skills = [
     { name: 'Shoemaking', category: 'Vocational' },
     { name: 'Graphic Design', category: 'Digital' },
@@ -88,57 +30,8 @@ export default function Programs() {
               Our <span className="gradient-text">Programs</span>
             </h1>
             <p className="text-xl text-foreground/60 max-w-3xl bricolage-grotesque">
-              We operate through 8 distinct arms, each designed to reach and empower communities in specific ways.
+              We operate through distinct arms, each designed to reach and empower communities in specific ways.
             </p>
-          </div>
-        </section>
-
-        {/* Programs Grid */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {arms.map((arm, index) => {
-                const images = [
-                  '/programs-school.jpg', 
-                  '/programs-academy.jpg', 
-                  '/programs-community.jpg', 
-                  '/programs-church.jpg',
-                  '/programs-community.jpg',
-                  '/programs-charity.jpg',
-                  '/programs-academy.jpg',
-                  '/programs-school.jpg'
-                ]
-                return (
-                  <div
-                    key={index}
-                    className="group relative h-80 rounded-2xl glass hover:glass-light transition-all duration-300 overflow-hidden animate-fade-in-up transform hover:scale-105 hover:shadow-2xl"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <Image
-                      src={images[index] || "/placeholder.svg"}
-                      alt={arm.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                    
-                    <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                      <span className="text-xs bricolage-grotesque-semibold text-accent mb-2 opacity-90">Program {index + 1}</span>
-                      <h3 className="bricolage-grotesque-bold text-2xl text-white mb-3">{arm.title}</h3>
-                      <p className="text-white/80 leading-relaxed mb-4 bricolage-grotesque text-sm line-clamp-2">{arm.description}</p>
-
-                      <Link
-                        href="/contact"
-                        className="text-accent bricolage-grotesque-semibold inline-flex items-center gap-2 group/link hover:gap-3 transition-all duration-300 w-fit"
-                      >
-                        Learn More <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
           </div>
         </section>
 
@@ -157,13 +50,18 @@ export default function Programs() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
               {skills.map((skill, index) => (
                 <div key={index} className="group p-6 rounded-xl glass hover:glass-light transition-all duration-300 transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: `${index * 0.08}s` }}>
                   <div className="text-xs bricolage-grotesque-semibold text-accent mb-3 uppercase tracking-wide opacity-70 group-hover:opacity-100">{skill.category}</div>
                   <p className="bricolage-grotesque-bold text-xl text-foreground group-hover:gradient-text transition-all">{skill.name}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Application Form Section */}
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <ApplicationForm />
             </div>
           </div>
         </section>

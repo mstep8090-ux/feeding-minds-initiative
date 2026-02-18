@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Users, Settings, LogOut, MessageSquare, Menu, X } from 'lucide-react'
+import { LayoutDashboard, Users, Settings, LogOut, MessageSquare, Menu, X, FileText } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
@@ -29,6 +29,11 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
             href: '/admin/messages',
             label: 'Messages',
             icon: MessageSquare
+        },
+        {
+            href: '/admin/applications',
+            label: 'Applications',
+            icon: FileText
         },
     ]
 

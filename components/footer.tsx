@@ -58,7 +58,7 @@ export default function Footer() {
                   src="/logo.png"
                   alt="FMI Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain rounded-md"
                 />
               </div>
               <span className="bricolage-grotesque-bold text-lg">FMI</span>

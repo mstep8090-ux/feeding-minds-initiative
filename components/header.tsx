@@ -26,7 +26,7 @@ export default function Header() {
               src="/logo.png"
               alt="Feeding Minds Initiative Logo"
               fill
-              className="object-contain"
+              className="object-contain rounded-md"
             />
           </div>
           <div className="hidden sm:flex flex-col">

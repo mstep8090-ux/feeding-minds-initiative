@@ -25,6 +25,7 @@ import { Label } from '@/components/ui/label'
 import { toast } from 'sonner'
 import { Loader2, Plus, Pencil, Trash2, ArrowUp, ArrowDown, LogOut, Upload } from 'lucide-react'
 import Image from 'next/image'
+import TeamMemberCard from '@/components/admin/team-member-card'
 
 // Define the type for TeamMember based on the model
 interface TeamMember {
@@ -216,67 +217,87 @@ export default function AdminTeamPage() {
                         </Button>
                     </form>
                     <Button onClick={() => handleOpen()}>
-                        <Plus className="mr-2 h-4 w-4" /> Add Member
+                        <Plus className="mr-2 h-4 w-4" /> <span className="hidden sm:inline">Add Member</span><span className="sm:hidden">Add</span>
                     </Button>
                 </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow overflow-hidden">
+            <div className="space-y-4">
                 {loading ? (
-                    <div className="flex justify-center p-8">
+                    <div className="flex justify-center p-8 bg-white rounded-lg shadow">
                         <Loader2 className="h-8 w-8 animate-spin text-primary" />
                     </div>
                 ) : members.length === 0 ? (
-                    <div className="p-8 text-center text-gray-500">
+                    <div className="p-8 text-center text-gray-500 bg-white rounded-lg shadow">
                         No team members found. Add one to get started.
                     </div>
                 ) : (
-                    <div className="divide-y divide-gray-200">
-                        {members.map((member, index) => (
-                            <div key={member._id} className="p-4 flex items-center justify-between hover:bg-gray-50">
-                                <div className="flex items-center space-x-4">
-                                    <div className="flex flex-col space-y-1 mr-2">
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            disabled={index === 0}
-                                            onClick={() => moveMember(index, 'up')}
-                                        >
-                                            <ArrowUp className="h-4 w-4" />
-                                        </Button>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            disabled={index === members.length - 1}
-                                            onClick={() => moveMember(index, 'down')}
-                                        >
-                                            <ArrowDown className="h-4 w-4" />
-                                        </Button>
+                    <>
+                        {/* Mobile View */}
+                        <div className="grid gap-4 md:hidden">
+                            {members.map((member, index) => (
+                                <TeamMemberCard
+                                    key={member._id}
+                                    member={member}
+                                    index={index}
+                                    totalMembers={members.length}
+                                    onEdit={handleOpen}
+                                    onDelete={handleDelete}
+                                    onMove={moveMember}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Desktop View */}
+                        <div className="hidden md:block bg-white rounded-lg shadow overflow-hidden">
+                            <div className="divide-y divide-gray-200">
+                                {members.map((member, index) => (
+                                    <div key={member._id} className="p-4 flex items-center justify-between hover:bg-gray-50">
+                                        <div className="flex items-center space-x-4">
+                                            <div className="flex flex-col space-y-1 mr-2">
+                                                <Button
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    disabled={index === 0}
+                                                    onClick={() => moveMember(index, 'up')}
+                                                >
+                                                    <ArrowUp className="h-4 w-4" />
+                                                </Button>
+                                                <Button
+                                                    variant="ghost"
+                                                    size="icon"
+                                                    disabled={index === members.length - 1}
+                                                    onClick={() => moveMember(index, 'down')}
+                                                >
+                                                    <ArrowDown className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <div className="h-12 w-12 relative rounded-full overflow-hidden bg-gray-200 border">
+                                                <Image
+                                                    src={member.image || '/placeholder.svg'}
+                                                    alt={member.name}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-medium text-gray-900">{member.name}</h3>
+                                                <p className="text-sm text-gray-500">{member.role} • {member.branch}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex space-x-2">
+                                            <Button variant="outline" size="sm" onClick={() => handleOpen(member)}>
+                                                <Pencil className="h-4 w-4 mr-1" /> Edit
+                                            </Button>
+                                            <Button variant="destructive" size="sm" onClick={() => handleDelete(member._id)}>
+                                                <Trash2 className="h-4 w-4 mr-1" /> Delete
+                                            </Button>
+                                        </div>
                                     </div>
-                                    <div className="h-12 w-12 relative rounded-full overflow-hidden bg-gray-200 border">
-                                        <Image
-                                            src={member.image || '/placeholder.svg'}
-                                            alt={member.name}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-lg font-medium text-gray-900">{member.name}</h3>
-                                        <p className="text-sm text-gray-500">{member.role} • {member.branch}</p>
-                                    </div>
-                                </div>
-                                <div className="flex space-x-2">
-                                    <Button variant="outline" size="sm" onClick={() => handleOpen(member)}>
-                                        <Pencil className="h-4 w-4 mr-1" /> Edit
-                                    </Button>
-                                    <Button variant="destructive" size="sm" onClick={() => handleDelete(member._id)}>
-                                        <Trash2 className="h-4 w-4 mr-1" /> Delete
-                                    </Button>
-                                </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    </>
                 )}
             </div>
 
