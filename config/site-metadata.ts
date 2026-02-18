@@ -74,6 +74,7 @@ export const metadata: Metadata = {
     category: 'Non-Profit Organization',
     classification: 'Youth Empowerment',
     other: {
+        email: 'admin@feedingmindsinitiative.com',
         'geo.region': 'NG-ED',
         'geo.placename': 'Benin City',
         'geo.position': '6.335;5.6037',

@@ -36,7 +36,7 @@ export default function Home() {
     {
       title: 'Physical Training Centers',
       caption: 'We operate physical training centers for hands-on skills development and mentorship.',
-      details: 'Head Office: Ekengwa, Benin City | Branch Office: Near Oluku, Benin City',
+      details: 'Office 1: No 10, Iyiomo lane, off Agbonma junction, opp Matice, Ekewan Road, Benin City | Office 2: Benin Shagamu Express way, opp Agen junction, Oluku Isihor, Benin City',
       image: '/training.png',
     },
     {

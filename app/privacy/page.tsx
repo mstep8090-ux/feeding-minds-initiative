@@ -50,7 +50,7 @@ export default function Privacy() {
 
             <h2 className="font-serif text-3xl font-bold text-foreground mt-8 mb-4">5. Contact Us</h2>
             <p className="text-foreground/70 leading-relaxed">
-              If you have any questions about this Privacy Policy, please contact us at info@feedingmindsinitiative.org
+              If you have any questions about this Privacy Policy, please contact us at admin@feedingmindsinitiative.com
             </p>
           </div>
         </section>

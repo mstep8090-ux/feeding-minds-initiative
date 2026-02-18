@@ -49,7 +49,7 @@ export default function Terms() {
 
             <h2 className="font-serif text-3xl font-bold text-foreground mt-8 mb-4">6. Contact Information</h2>
             <p className="text-foreground/70 leading-relaxed">
-              If you have any questions about these Terms & Conditions, please contact us at info@feedingmindsinitiative.org
+              If you have any questions about these Terms & Conditions, please contact us at admin@feedingmindsinitiative.com
             </p>
           </div>
         </section>

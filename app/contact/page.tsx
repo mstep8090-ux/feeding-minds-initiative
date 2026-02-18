@@ -52,19 +52,31 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'info@feedingmindsinitiative.org',
-      link: 'mailto:info@feedingmindsinitiative.org',
+      content: 'admin@feedingmindsinitiative.com',
+      link: 'mailto:admin@feedingmindsinitiative.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      content: '08073810811, 07038258161, 07040826955',
+      link: 'tel:08073810811',
     },
     {
       icon: MapPin,
       title: 'Location',
       content: 'Head Office & Multiple Branch Locations',
+      link: '#',
+    },
+    {
+      icon: MapPin,
+      title: 'Office 1',
+      content: 'No 10, Iyiomo lane, off Agbonma junction, opp Matice, Ekewan Road, Benin City, Edo State',
+      link: '#',
+    },
+    {
+      icon: MapPin,
+      title: 'Office 2',
+      content: 'Benin Shagamu Express way, opp Agen junction, Oluku Isihor, Benin City',
       link: '#',
     },
   ]

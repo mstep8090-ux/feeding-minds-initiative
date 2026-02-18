@@ -37,7 +37,7 @@ export default function Footer() {
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:info@feedingmindsinitiative.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:admin@feedingmindsinitiative.com', label: 'Email' },
   ]
 
   return (

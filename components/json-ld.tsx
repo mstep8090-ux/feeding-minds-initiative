@@ -16,7 +16,7 @@ export default function JsonLd() {
                 ],
                 contactPoint: {
                     '@type': 'ContactPoint',
-                    telephone: '+234-800-123-4567',
+                    telephone: '08073810811',
                     contactType: 'customer service',
                     areaServed: 'NG',
                     availableLanguage: 'en'
@@ -28,10 +28,10 @@ export default function JsonLd() {
                 name: 'Feeding Minds Initiative',
                 image: 'https://feedingmindsinitiative.org/hero-main.jpg',
                 url: 'https://feedingmindsinitiative.org',
-                telephone: '+234-800-123-4567',
+                telephone: '08073810811',
                 address: {
                     '@type': 'PostalAddress',
-                    streetAddress: 'Benin City',
+                    streetAddress: 'No 10, Iyiomo lane, off Agbonma junction, opp Matice, Ekewan Road',
                     addressLocality: 'Benin City',
                     addressRegion: 'Edo',
                     postalCode: '300001',
