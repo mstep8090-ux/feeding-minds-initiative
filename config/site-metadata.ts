@@ -1,7 +1,7 @@
 import { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://feedingmindsinitiative.org'),
+    metadataBase: new URL('https://www.feedingmindsinitiative.com'),
     title: {
         default: 'Feeding Minds Initiative | Empowering Nigerian Youth',
         template: '%s | Feeding Minds Initiative',
@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     authors: [{ name: 'Feeding Minds Initiative' }],
     creator: 'Feeding Minds Initiative',
     publisher: 'Feeding Minds Initiative',
+    icons: {
+        icon: '/logo.png',
+        shortcut: '/logo.png',
+        apple: '/logo.png',
+    },
     robots: {
         index: true,
         follow: true,
@@ -36,7 +41,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_NG',
-        url: 'https://feedingmindsinitiative.org',
+        url: 'https://www.feedingmindsinitiative.com',
         title: 'Feeding Minds Initiative | Empowering Nigerian Youth',
         description: 'Empowering Nigerian youth with free practical skills, vocational training, and mentorship. Join us in building a self-reliant generation.',
         siteName: 'Feeding Minds Initiative',
@@ -64,7 +69,7 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        canonical: 'https://feedingmindsinitiative.org',
+        canonical: 'https://www.feedingmindsinitiative.com',
     },
     category: 'Non-Profit Organization',
     classification: 'Youth Empowerment',

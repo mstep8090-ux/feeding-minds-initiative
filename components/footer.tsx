@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react'
 
 export default function Footer() {
@@ -36,7 +37,7 @@ export default function Footer() {
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:info@feedingmindsinitiative.org', label: 'Email' },
+    { icon: Mail, href: 'mailto:info@feedingmindsinitiative.com', label: 'Email' },
   ]
 
   return (
@@ -52,8 +53,13 @@ export default function Footer() {
           {/* Branding Column */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary bricolage-grotesque-extrabold">FM</span>
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/logo.png"
+                  alt="FMI Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="bricolage-grotesque-bold text-lg">FMI</span>
             </div>

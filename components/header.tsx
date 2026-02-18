@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
@@ -20,8 +21,13 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 bg-gradient-to-br from-accent via-secondary to-accent rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-all duration-300 shadow-lg shadow-accent/60 group-hover:shadow-accent/100">
-            <span className="text-white bricolage-grotesque-extrabold text-xl">FM</span>
+          <div className="relative w-12 h-12 transform group-hover:scale-110 transition-all duration-300">
+            <Image
+              src="/logo.png"
+              alt="Feeding Minds Initiative Logo"
+              fill
+              className="object-contain"
+            />
           </div>
           <div className="hidden sm:flex flex-col">
             <span className="bricolage-grotesque-extrabold text-lg bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent leading-none">FMI</span>
