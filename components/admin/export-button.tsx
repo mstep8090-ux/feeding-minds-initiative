@@ -2,47 +2,51 @@
 
 import { Button } from '@/components/ui/button'
 import { Download } from 'lucide-react'
-import jsPDF from 'jspdf'
-import autoTable from 'jspdf-autotable'
 
 interface ExportButtonProps {
     data: any[]
 }
 
 export default function ExportButton({ data }: ExportButtonProps) {
-    const exportPDF = () => {
-        const doc = new jsPDF()
+    const exportCSV = () => {
+        if (!data || data.length === 0) return
 
-        doc.setFontSize(18)
-        doc.text('Program Applications', 14, 22)
-        doc.setFontSize(11)
-        doc.setTextColor(100)
-        doc.text(`Generated on ${new Date().toLocaleDateString()}`, 14, 30)
+        // Define headers
+        const headers = ['Date', 'Name', 'Email', 'Phone', 'Skill', 'Location', 'Status']
 
-        const tableData = data.map(app => [
+        // Map data to CSV rows
+        const rows = data.map(app => [
             new Date(app.createdAt).toLocaleDateString(),
-            app.fullName,
+            `"${app.fullName}"`, // Quote strings to handle commas
             app.email,
             app.phone,
-            app.skillOfInterest,
-            app.location
+            `"${app.skillOfInterest}"`,
+            `"${app.location}"`,
+            app.status
         ])
 
-        autoTable(doc, {
-            head: [['Date', 'Name', 'Email', 'Phone', 'Skill', 'Location']],
-            body: tableData,
-            startY: 40,
-            styles: { fontSize: 8 },
-            headStyles: { fillColor: [41, 128, 185] }
-        })
+        // Combine headers and rows
+        const csvContent = [
+            headers.join(','),
+            ...rows.map(row => row.join(','))
+        ].join('\n')
 
-        doc.save('applications.pdf')
+        // Create blob and download link
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.setAttribute('href', url)
+        link.setAttribute('download', `applications_${new Date().toISOString().split('T')[0]}.csv`)
+        link.style.visibility = 'hidden'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
     }
 
     return (
-        <Button onClick={exportPDF} variant="outline">
+        <Button onClick={exportCSV} variant="outline">
             <Download className="mr-2 h-4 w-4" />
-            Export to PDF
+            Export to CSV
         </Button>
     )
 }
