@@ -12,7 +12,7 @@ import Application from '@/models/Application'
 // For now, I will write the file assuming a standard `connectDB` if it exists, or I will adapt.
 // Let me verify `lib` contents in the next turn if I fail. For now I'll use a placeholder import and fix if needed.
 // Actually, I'll list `lib` parallel to this to be sure.
-import { connectToDB } from '@/lib/db' // Hypothetical, will verify
+import connectToDB from '@/lib/db'
 
 export async function submitApplication(formData: FormData) {
     try {
