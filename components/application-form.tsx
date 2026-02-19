@@ -19,11 +19,27 @@ import { Loader2, Send } from 'lucide-react'
 
 const skills = [
     'Shoemaking',
-    'Graphic Design',
+    'Graphic Design (Pixellab & Canva)',
     'Business Development',
     'Leadership Training',
     'Digital Marketing',
     'Creative Writing',
+    'Barbing (Hair Stylist)',
+    'Body Cream Production',
+    'Perfume and Body Spray',
+    'Bag Making',
+    'Liquid Soap, Dettol, Hair Cream, Others',
+    'Leather Making (Sandals)',
+    'Photo Enlargement/Framing',
+    'Jotter and Book Making',
+    'Tie and Dye',
+    'Bleach and Izal Production',
+    'Print Making (On Shirt)',
+    'Photo and Video Editing (On Phone)',
+    'Arts and Crafts',
+    'Recycling',
+    'Baking and Baking Business Skills',
+    'Fashion Design',
 ]
 
 function SubmitButton() {

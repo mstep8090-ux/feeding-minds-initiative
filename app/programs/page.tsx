@@ -8,11 +8,27 @@ import ApplicationForm from '@/components/application-form'
 export default function Programs() {
   const skills = [
     { name: 'Shoemaking', category: 'Vocational' },
-    { name: 'Graphic Design', category: 'Digital' },
+    { name: 'Graphic Design (Pixellab & Canva)', category: 'Digital' },
     { name: 'Business Development', category: 'Entrepreneurship' },
     { name: 'Leadership Training', category: 'Personal Development' },
     { name: 'Digital Marketing', category: 'Digital' },
     { name: 'Creative Writing', category: 'Creative' },
+    { name: 'Barbing (Hair Stylist)', category: 'Vocational' },
+    { name: 'Body Cream Production', category: 'Vocational' },
+    { name: 'Perfume and Body Spray', category: 'Vocational' },
+    { name: 'Bag Making', category: 'Vocational' },
+    { name: 'Liquid Soap, Dettol, Hair Cream, Others', category: 'Vocational' },
+    { name: 'Leather Making (Sandals)', category: 'Vocational' },
+    { name: 'Photo Enlargement/Framing', category: 'Media' },
+    { name: 'Jotter and Book Making', category: 'Vocational' },
+    { name: 'Tie and Dye', category: 'Creative' },
+    { name: 'Bleach and Izal Production', category: 'Vocational' },
+    { name: 'Print Making (On Shirt)', category: 'Vocational' },
+    { name: 'Photo and Video Editing (On Phone)', category: 'Digital' },
+    { name: 'Arts and Crafts', category: 'Creative' },
+    { name: 'Recycling', category: 'Environmental' },
+    { name: 'Baking and Baking Business Skills', category: 'Catering' },
+    { name: 'Fashion Design', category: 'Vocational' },
   ]
 
   return (
