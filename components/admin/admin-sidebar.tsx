@@ -31,10 +31,30 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
             icon: MessageSquare
         },
         {
+            href: '/admin/services',
+            label: 'Home Services',
+            icon: FileText // Reusing icon
+        },
+        {
+            href: '/admin/gallery',
+            label: 'Training Gallery',
+            icon: Users // Reusing icon visually suitable or we could import Image from lucide
+        },
+        {
             href: '/admin/applications',
             label: 'Applications',
             icon: FileText
         },
+        {
+            href: '/admin/testimonies',
+            label: 'Testimonies & Updates',
+            icon: MessageSquare // Repurposing message icon or we could use another
+        },
+        {
+            href: '/admin/collaborators',
+            label: 'Collaborators',
+            icon: Users
+        }
     ]
 
     return (
